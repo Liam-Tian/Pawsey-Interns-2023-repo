@@ -3,56 +3,40 @@ This is a repo containing more information of our work. Our source code and pape
 
 ## Table of Contents
 
-- [Security](#security)
-- [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-- [API](#api)
-- [Contributing](#contributing)
-- [License](#license)
+- [Abstract](#abstract)
+- [Energy Consumption Model](#energy-consumption-model)
+- [Optimal Altitude Evaluation](#optimal-altitude-evaluation)
+- [Deep Reinforcement Learning](#deep-reinforcement-learning)
+- [Visualization](#visualization)
+- [Reference](#reference)
 
-## Security
+## Abstract
 
 In the context of Australia, due to its unique geographical distribution, it is difficult for farmers to closely monitor animal health and welfare. There is a need for innovative and autonomous solutions to keep up with demand in the agricultural industry. This project proposes using Unmanned Aerial Vehicles (UAVs) as an effective solution to offer an integrated wearable sensor data acquisition and analytics platform for livestock monitoring. Using computer vision algorithms, it will deploy UAVs to fly on the farm periodically and detect livestock with collars. The UAVs then fly in close proximity to the animals and establish communication with their wearable sensors. UAVs will also pull out the raw data at high speed and transmit it to the Cloud for further analysis. Data analytics methods will run in real-time at the cloud data centre to infer valuable phenomena and alert the farmers if urgent action is necessary.
 
-## Background
+## Energy Consumption Model
 
-### Any optional sections
+Due to limited space, we do not introduce the energy model in the poster. We reference the model proposed by [[1]](#refer-anchor-1). The basic idea is to divide the whole procedure into multiple phase: 1) waking-up phase, 2) sensing phase, 3) transmission phase and 4) processing phase. The energy consumption will be determined separately for each phase. 
 
-## Install
+## Optimal Altitude Evaluation
 
-This module depends upon a knowledge of [Markdown]().
+The action space of UAVs in our work is based on 2d space including horizontal and vertical movement. Therefore the altitude of UAVs should be determined for the maximum coverage radius. Following the assumption in [[2]](#refer-anchor-2), we formulate the evaluation into a optimization problem and solve the value by implicit differentiation.
 
-```
-```
+## Deep Reinforcement Learning
 
-### Any optional sections
+We give the essentials of reinforcement learning here.
 
-## Usage
+* State: The 2d location of each node and the current data load.
+* Reward: A data-driven reward function is designd. A reward is given depending on the data amount collectd in current timestep.
+* Action Space: A discrete set with 7 elements: left, right, forward, backward and idle.
 
-```
-```
+## Visualization
 
-Note: The `license` badge image link at the top of this file should be updated with the correct `:user` and `:repo`.
+## Reference
+<div id="refer-anchor-1"></div>
 
-### Any optional sections
+- [1] [Bouguera T, Diouris J F, Chaillout J J, et al. Energy consumption model for sensor nodes based on LoRa and LoRaWAN[J]. Sensors, 2018, 18(7): 2104.]
 
-## API
+<div id="refer-anchor-2"></div>
 
-### Any optional sections
-
-## More optional sections
-
-## Contributing
-
-See [the contributing file](CONTRIBUTING.md)!
-
-PRs accepted.
-
-Small note: If editing the Readme, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
-
-### Any optional sections
-
-## License
-
-[MIT © Richard McRichface.](../LICENSE)
+- [2] [Al-Hourani A, Kandeepan S, Lardner S. Optimal LAP altitude for maximum coverage[J]. IEEE Wireless Communications Letters, 2014, 3(6): 569-572.]
