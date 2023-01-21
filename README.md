@@ -31,6 +31,18 @@ We give the essentials of reinforcement learning here.
 * Action Space: A discrete set with 7 elements: left, right, forward, backward and idle.
 
 ## Visualization
+<img src="v1.gif" alt="Cover" width="50%"/><img src="v2.gif" alt="Cover" width="50%"/>
+In the figure, the cross symbol is the UAVs, among which the black one (Type II) is responsible for pre-processing raw data from the bottom layer, while others (Type I) are deployed by DQNs to find the shortest path to approach the sensor nodes. These nodes will be marked by different colors, meaning assigning to different clusters and will be visited by their own UAVs.
+
+The figure left is the traditional method without considering the mobility of the nodes in real time, and these clusters will soon be mixed with each other, bringing the difficulty for UAVs to collect data. These UAVs have to go through the whole pasture to collect data, slowing down the efficiency. Instead, our method tries to update the cluster for every timestep. Since every UAV is only responsible for their own cluster, thus they just need to move around the sub-area of the pasture, thus improving the efficiency.
+
+Traditional Method:
+* Avg. CDPS: 18.33 bytes / step
+* Avg. ECPS: 14.79 J / step
+
+Our Method:
+* Avg. CDPS: 19.29 bytes/ step
+* Avg. ECPS: 13.57 J /step
 
 ## Reference
 <div id="refer-anchor-1"></div>
